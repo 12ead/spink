@@ -240,12 +240,13 @@
             nickname: "Plz Login!",
             is_3003: false,
             url: null,
-            date: "<%= req_date %>"
+            date: "<%= req_date %>",
+            pre: "<%= previous %>"
 
         }
 
         console.log("req_date: ", user_info.date)
-        document.getElementById("winnerday").innerHTML = user_info.date;
+        document.getElementById("winnerday").innerHTML = user_info.pre;
 
         <% } else { %>
         // Add User Information
@@ -255,7 +256,7 @@
             is_3003: "<%= user.is_3003 %>",
             url: "<%= user.url %>",
             date: "<%= req_date %>",
-            pre: "<%=previous %>"
+            pre: "<%= previous %>"
 
         }
         console.log("req_date: ", user_info.date)
@@ -267,7 +268,7 @@
 
 
     </script>
-
+<%#= previous %>
 
 
     <script type="text/javascript" src="/js/spink-battle.js"></script>
