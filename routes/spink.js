@@ -20,8 +20,6 @@ router.get('/', function(req,res){
       // Make previous and next day
       var previous = moment(data.req_date).subtract(1, "day").format('YYYY-MM-DD')
       var next = moment(data.req_date).add(1, "day").format('YYYY-MM-DD')
-
-
       /*if (err){
         data.messages = null
       }*/
