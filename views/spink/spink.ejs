@@ -9,125 +9,137 @@
             스핀크 게임의 룰은 '매우 단순'합니다. 먼저 아래의 버튼 6개를 눌러 숫자를 선택한 후
             <button type="button" style="width:60" class="btn btn-default btn-xs">
             Submit
-            </button>
-            버튼을 눌러보세요.
+            </button> 버튼을 눌러보세요.
 
             <!-- <br>30초면 스핀크 룰을 이해할 수 있습니다. -->
-             <div id="divBtn4"><div align="right" style="text-decoration:underline; color:blue;"><button type="button" id="button4" style="width:60pt" class="btn btn-link" onclick="button4TextEx()">더읽기</button></div></div><!--divBtn4 end-->
+            <div id="divBtn4">
+                <div align="right" style="text-decoration:underline; color:blue;"><button type="button" id="button4" style="width:60pt" class="btn btn-link" onclick="button4TextEx()">더읽기</button></div>
+            </div>
+            <!--divBtn4 end-->
             <p>
             </P>
             <div id="div4">
 
                 <% include ./parts/explain_rule %>
 
-                 <div id="divBtn9">스핀크 게임 룰을 보다 자세히 이해하고 싶다면 ... <div align="right" style="text-decoration:underline; color:blue;"><button id="button9" style="width:60px;" class="btn btn-link" >더읽기</button></div></div><!--divBtn1 end-->
-                 <br>
-                    <div id="div9">
-                      <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
-                      <p></p>
-                      <p>
-                          <h2><small>스핀크 체인</small></h2> </b>
-                          <% include ./parts/explain_spinkchain %>
-                          <div id="div3">
-                          <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
-
-                    <p></p>
-                    <p>
-                        <h2><small>스핀크 게임</small></h2> </b>
-                    </p>
-                    <p></p>
-
-
-                    앞서 언급했듯이 스핀크 게임의 핵심은 스핀크 체인을 형성하는 숫자를 '내가 선택함으로써 변화될 스핀크 숫자를 맞추는 것'에 있습니다. 이번 버전에서는 3개의 스핀크 체인을 사용합니다.
-                    <br>
-                    <br>
-                    <div style="text-align:center"><img src="/image/chain2.png" alt="Show"/> </div>
-                    <br>
-                    따라서 유저는 <button type="button" style="width:20px;height:20px;" class="btn btn-warning btn-xs"></button>와
-                    <button type="button" style="width:20px;height:20px;" class="btn btn-info btn-xs"></button>에서 각각 3개씩, 총 6개의 숫자를 선택할 수 있습니다.
-                    유저가 맞춘 개수에 따라 오늘의 능력치가 부여되고 오늘의 매치에 자동으로 참여하게 됩니다. 그후 매치 결과에 따라 승/패가 기록됩니다.
-                    <br><br>
-                    <div style="text-align:center"><img src="/image/chain3.png" alt="Show"/> </div>
-                    <br>
-                    <br>
-                    <div id="divBtn1" style="text-align:center"><button id="button1" style="width:90pt;" class="btn btn-default">테스트</button><br><br></div>
+                    <div id="divBtn9">스핀크 게임 룰을 보다 자세히 이해하고 싶다면 ...
+                        <div align="right" style="text-decoration:underline; color:blue;"><button id="button9" style="width:60px;" class="btn btn-link">더읽기</button></div>
+                    </div>
                     <!--divBtn1 end-->
-                      <div id="div1">
+                    <br>
+                    <div id="div9">
                         <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
                         <p></p>
                         <p>
-                            <h2><small>테스트</small></h2> </b>
-                        </p>
-                      <p></p>
-                              아래의 <button type="button" class="btn btn-success btn-xs">?</button>에 들어갈 숫자는 무엇일까요?<br><br>
-                          <p></p>
-                            <div style="width:250px; margin: 0 auto;">
-                                <button type="button" style="width:27pt" class="btn btn-success">2</button> 와
-                                <button type="button" style="width:27pt" class="btn btn-warning">1</button> 이 만나면?
-                                <button id="btText_01" type="button" style="width:27pt" class="btn btn-success">?</button>&nbsp&nbsp<text id="text_01" style="color:red; font-size:8px;"></text>
-                            </div>
-                          <br><br><button type="button" style="width:20px; height:22px" class="btn btn-info btn-xs">?</button>을 클릭해서
-                          <button type="button" style="width:20px; height:22px" class="btn btn-success btn-xs">?</button>에 들어갈 숫자를 맞춰보세요.<br><br><br>
-                            <div style="margin: 0 auto; text-align:center;">
-                                <button id="btText_02" type="button" style="width:27pt" class="btn btn-info" onclick="myFunction0()">?</button>
-                                <button id="button8" type="button" style="width:45pt" class="btn btn-default" onclick="textFunc01()">확인</button><br><br>
-                                <p id="text_02" style="color:red;font-size:12px;"></p>
-                          </div>
+                            <h2><small>스핀크 체인</small></h2> </b>
+                            <% include ./parts/explain_spinkchain %>
+                                <div id="div3">
+                                    <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
 
-                          <div id="div8">
-                              위의 스핀크룰만 알아도 쉽게 게임에 참여할 수 있습니다. 위의 예제에서
-                              <button type="button" class="btn btn-success btn-xs">2</button>의 숫자는 '먼저 참여했던 사람들의 숫자들이 순차적으로 스핀크연산을 해서 만들어진 숫자'입니다. 실제 게임시 매순간 변화되고 유저에게 보여지지 않습니다.
-                              <br>가위바위보와 같습니다.
-                              <button type="button" style="width:20px; height:22px" class="btn btn-success btn-xs"></button>의 숫자를 예상하고 내가 선택한 숫자
-                              <button type="button" class="btn btn-warning btn-xs">1</button>과 만나
-                              <button type="button" class="btn btn-success btn-xs">?</button>에 무슨 숫자가 생성될지 맞추는 것이 전부입니다. 그 값을
-                              <button type="button" class="btn btn-info btn-xs">?</button>에서 선택하면 됩니다.
-                              <br>게임에선 3개의 숫자를 맞춰야 합니다. 유저가 맞춘 개수에 따라 오늘의 능력치가 부여되고 오늘의 매치에 자동으로 참여하게 됩니다. 매치 결과에 따라 승/패가 기록됩니다. 아래의 숫자칸을 채워 게임에 바로 참여해보세요. 오늘 승률이 가장 높은 분에게
-                              <text style="color:red;">Today's Award</text> 를 드립니다.<br><br>
+                                    <p></p>
+                                    <p>
+                                        <h2><small>스핀크 게임</small></h2> </b>
+                                    </p>
+                                    <p></p>
 
 
-                <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
-                <p></p>
-                            <!--Spink's Ranking System-->
+                                    앞서 언급했듯이 스핀크 게임의 핵심은 스핀크 체인을 형성하는 숫자를 '내가 선택함으로써 변화될 스핀크 숫자를 맞추는 것'에 있습니다. 이번 버전에서는 3개의 스핀크 체인을 사용합니다.
+                                    <br>
+                                    <br>
+                                    <div style="text-align:center"><img src="/image/chain2.png" alt="Show" /> </div>
+                                    <br> 따라서 유저는 <button type="button" style="width:20px;height:20px;" class="btn btn-warning btn-xs"></button>와
+                                    <button type="button" style="width:20px;height:20px;" class="btn btn-info btn-xs"></button>에서 각각 3개씩, 총 6개의 숫자를 선택할 수 있습니다. 유저가 맞춘 개수에 따라 오늘의 능력치가 부여되고 오늘의 매치에 자동으로 참여하게 됩니다. 그후 매치 결과에 따라 승/패가 기록됩니다.
+                                    <br><br>
+                                    <div style="text-align:center"><img src="/image/chain3.png" alt="Show" /> </div>
+                                    <br>
+                                    <br>
+                                    <div id="divBtn1" style="text-align:center"><button id="button1" style="width:90pt;" class="btn btn-default">테스트</button><br><br></div>
+                                    <!--divBtn1 end-->
+                                    <div id="div1">
+                                        <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
+                                        <p></p>
+                                        <p>
+                                            <h2><small>테스트</small></h2> </b>
+                                        </p>
+                                        <p></p>
+                                        아래의 <button type="button" class="btn btn-success btn-xs">?</button>에 들어갈 숫자는 무엇일까요?<br><br>
+                                        <p></p>
+                                        <div style="width:250px; margin: 0 auto;">
+                                            <button type="button" style="width:27pt" class="btn btn-success">2</button> 와
+                                            <button type="button" style="width:27pt" class="btn btn-warning">1</button> 이 만나면?
+                                            <button id="btText_01" type="button" style="width:27pt" class="btn btn-success">?</button>&nbsp&nbsp<text id="text_01" style="color:red; font-size:8px;"></text>
+                                        </div>
+                                        <br><br><button type="button" style="width:20px; height:22px" class="btn btn-info btn-xs">?</button>을 클릭해서
+                                        <button type="button" style="width:20px; height:22px" class="btn btn-success btn-xs">?</button>에 들어갈 숫자를 맞춰보세요.<br><br><br>
+                                        <div style="margin: 0 auto; text-align:center;">
+                                            <button id="btText_02" type="button" style="width:27pt" class="btn btn-info" onclick="myFunction0()">?</button>
+                                            <button id="button8" type="button" style="width:45pt" class="btn btn-default" onclick="textFunc01()">확인</button><br><br>
+                                            <p id="text_02" style="color:red;font-size:12px;"></p>
+                                        </div>
 
-                        <div class="wrapper">
-                          <div class="contents"><h2><small>스핀크 랭킹</small></h2></div>
-                          <div class="sidebar"><div id="divBtn6"><button id="button6" style="width:45pt; margin-left:60px;" class="btn btn-default">보기</button></div><!--divBtn6 end--></div>
-                        </div>
-                        <!--div wrapper end-->
-                        <div id="div6">스핀크 랭킹은 개별적인 이벤트에 맞춰 제작되어질 수 있습니다. 현재는 전체 유저를 대상으로하는 스핀크 랭킹과 3003 N 1st ST, SANJOSE, CA 내 유저를 대상으로 하는 스핀크 랭킹이 있습니다.
-                          <!--What is the SPINK?, SPINK's story-->
-                          <br><br>
-
-                <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
-                <p></p>
-                          <div class="wrapper">
-                            <div class="contents"><h2><small>스핀크 이야기</small></h2></div>
-                            <div class="sidebar"><div id="divBtn7"><button id="button7" style="width:45pt; margin-left:60px;" class="btn btn-default">보기</button></div><!--divBtn7 end--></div>
-                          </div><!-- div wrapper end-->
-                          <div id="div7">
-                          <% include ./parts/story %>
+                                        <div id="div8">
+                                            위의 스핀크룰만 알아도 쉽게 게임에 참여할 수 있습니다. 위의 예제에서
+                                            <button type="button" class="btn btn-success btn-xs">2</button>의 숫자는 '먼저 참여했던 사람들의 숫자들이 순차적으로 스핀크연산을 해서 만들어진 숫자'입니다. 실제 게임시 매순간 변화되고 유저에게 보여지지 않습니다.
+                                            <br>가위바위보와 같습니다.
+                                            <button type="button" style="width:20px; height:22px" class="btn btn-success btn-xs"></button>의 숫자를 예상하고 내가 선택한 숫자
+                                            <button type="button" class="btn btn-warning btn-xs">1</button>과 만나
+                                            <button type="button" class="btn btn-success btn-xs">?</button>에 무슨 숫자가 생성될지 맞추는 것이 전부입니다. 그 값을
+                                            <button type="button" class="btn btn-info btn-xs">?</button>에서 선택하면 됩니다.
+                                            <br>게임에선 3개의 숫자를 맞춰야 합니다. 유저가 맞춘 개수에 따라 오늘의 능력치가 부여되고 오늘의 매치에 자동으로 참여하게 됩니다. 매치 결과에 따라 승/패가 기록됩니다. 아래의 숫자칸을 채워 게임에 바로 참여해보세요. 오늘 승률이 가장 높은 분에게
+                                            <text style="color:red;">Today's Award</text> 를 드립니다.<br><br>
 
 
+                                            <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
+                                            <p></p>
+                                            <!--Spink's Ranking System-->
 
-                          </div>
-                          <!--div7 end-->
-                        </div>
-                        <!--div6 end-->
-                      </div>
-                      <!-- div8 end -->
-                      </div>
-                      <!--div1 end-->
+                                            <div class="wrapper">
+                                                <div class="contents">
+                                                    <h2><small>스핀크 랭킹</small></h2></div>
+                                                <div class="sidebar">
+                                                    <div id="divBtn6"><button id="button6" style="width:45pt; margin-left:60px;" class="btn btn-default">보기</button></div>
+                                                    <!--divBtn6 end-->
+                                                </div>
+                                            </div>
+                                            <!--div wrapper end-->
+                                            <div id="div6">스핀크 랭킹은 개별적인 이벤트에 맞춰 제작되어질 수 있습니다. 현재는 전체 유저를 대상으로하는 스핀크 랭킹과 3003 N 1st ST, SANJOSE, CA 내 유저를 대상으로 하는 스핀크 랭킹이 있습니다.
+                                                <!--What is the SPINK?, SPINK's story-->
+                                                <br><br>
+
+                                                <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
+                                                <p></p>
+                                                <div class="wrapper">
+                                                    <div class="contents">
+                                                        <h2><small>스핀크 이야기</small></h2></div>
+                                                    <div class="sidebar">
+                                                        <div id="divBtn7"><button id="button7" style="width:45pt; margin-left:60px;" class="btn btn-default">보기</button></div>
+                                                        <!--divBtn7 end-->
+                                                    </div>
+                                                </div>
+                                                <!-- div wrapper end-->
+                                                <div id="div7">
+                                                    <% include ./parts/story %>
+
+
+
+                                                </div>
+                                                <!--div7 end-->
+                                            </div>
+                                            <!--div6 end-->
+                                        </div>
+                                        <!-- div8 end -->
+                                    </div>
+                                    <!--div1 end-->
+                                </div>
+                                <!--div3 end-->
+
                     </div>
-                    <!--div3 end-->
-
-                </div>
-                <!--div9 end-->
-                <div class="singleWrap">
-                    <div class="contents">
-                        <h2><small></small></h2></div>
-                    <div class="singleSide" style="float: right;"><button id="button5" style="width:60pt" class="btn btn-default" onclick="button4TextEx()">감추기</button></div>
-                </div>
+                    <!--div9 end-->
+                    <div class="singleWrap">
+                        <div class="contents">
+                            <h2><small></small></h2></div>
+                        <div class="singleSide" style="float: right;"><button id="button5" style="width:60pt" class="btn btn-default" onclick="button4TextEx()">감추기</button></div>
+                    </div>
             </div>
             <!--div4 end-->
         </div>
@@ -136,30 +148,30 @@
         <div class="w3-container w3-blue">
             <!--<div class="buttons" style="float: right; margin-right: 10px; height:30pt; display:inline-block"><button type="button" class="btn btn-link" onclick="location.href='/users/new'"><p style="color:white;">Join</p></button><button type="button" class="btn btn-link"><p style="color:white;">Login</p></button></div>-->
             <%if (user != undefined) { %>
-            <div style="float:left;">
-              <!-- Rounded switch -->
-              <h6 style="float:left;"><small><text style="color:white">3003 N 1st?&nbsp;&nbsp;</text></small></h6>
-              <label class="switch" style="top:7px;float:left;">
+                <div style="float:left;">
+                    <!-- Rounded switch -->
+                    <h6 style="float:left;"><small><text style="color:white">3003 N 1st?&nbsp;&nbsp;</text></small></h6>
+                    <label class="switch" style="top:7px;float:left;">
                 <input id="input_is3003" type="checkbox" data-on="Y" data-off="N" checked data-toggle="toggle" data-size="mini"><!--<input id="input_is3003" type="checkbox"> -->
                 <!-- <div class="slider round"></div>-->
                 <div id="console-event"></div>
               </label>
-            </div>
-            <% } %>
+                </div>
+                <% } %>
 
-            <div style="float:right;">
-            <%if (user == undefined) { %>
-              <div style="float:right;"> <h6 style="float:left">Sign in with your&nbsp;&nbsp;</h6>
-               <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
-              </div>
-            <% }else{ %>
-               <h6 style="float:left" id="NickName"><%= user.nickname %></h6>
-               &nbsp;
-               <button style="margin-top:4px;" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#NickNameChangeModal">
+                    <div style="float:right;">
+                        <%if (user == undefined) { %>
+                            <div style="float:right;">
+                                <h6 style="float:left">Sign in with your&nbsp;&nbsp;</h6>
+                                <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+                            </div>
+                            <% }else{ %>
+                                <h6 style="float:left" id="NickName"><%= user.nickname %></h6> &nbsp;
+                                <button style="margin-top:4px;" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#NickNameChangeModal">
                 Edit Profile
               </button>
-            <% } %>
-            </div>
+                                <% } %>
+                    </div>
 
         </div>
     </div>
@@ -169,6 +181,7 @@
     <br><br>
 
     <% include ./parts/score %>
+
 
     <br><br>
 
@@ -181,80 +194,98 @@
     <% include ./parts/battlelist %>
 
 
-</div> <!--class="w3-container"-->
+</div>
+<!--class="w3-container"-->
 
 <%# <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>%>
 
 
-<!-- Modal -->
-<div class="modal fade" id="NickNameChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Change your nickname and URL</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Nickname</label>
-            <input type="text" class="form-control" id="nicknameInput" placeholder="Enter Nickname">
-            <small id="emailHelp" class="form-text text-muted">You can change your nickname</small><br>
-            <label for="exampleInputEmail1">URL</label>
-            <input type="text" class="form-control" id="urlInput" placeholder="Enter URL">
-            <small id="emailHelp" class="form-text text-muted">You can change your URL</small>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="changeNickName" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Changing">Save changes</button>
-      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="NickNameChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Change your nickname and URL</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nickname</label>
+                            <input type="text" class="form-control" id="nicknameInput" placeholder="Enter Nickname">
+                            <small id="emailHelp" class="form-text text-muted">You can change your nickname</small><br>
+                            <label for="exampleInputEmail1">URL</label>
+                            <input type="text" class="form-control" id="urlInput" placeholder="Enter URL">
+                            <small id="emailHelp" class="form-text text-muted">You can change your URL</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="changeNickName" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Changing">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
-<script>
-    <% if (user == undefined) { %>
-      var user_info = {
-        _id: null,
-        nickname: "Plz Login!",
-        is_3003: false,
-        url: null
-      }
-    <% } else { %>
-      // Add User Information
-      var user_info = {
-        _id: "<%= user._id %>",
-        nickname: "<%= user.nickname %>",
-        is_3003: "<%= user.is_3003 %>",
-        url: "<%= user.url %>",
-      }
-    <% } %>
+<%#= req_date %>
+    <script>
     a();
-</script>
+        <% if (user == undefined) { %>
+        var user_info = {
+            _id: null,
+            nickname: "Plz Login!",
+            is_3003: false,
+            url: null,
+            date: "<%= req_date %>"
+
+        }
+
+        console.log("req_date: ", user_info.date)
+        document.getElementById("winnerday").innerHTML = user_info.date;
+
+        <% } else { %>
+        // Add User Information
+        var user_info = {
+            _id: "<%= user._id %>",
+            nickname: "<%= user.nickname %>",
+            is_3003: "<%= user.is_3003 %>",
+            url: "<%= user.url %>",
+            date: "<%= req_date %>",
+            pre: "<%=previous %>"
+
+        }
+        console.log("req_date: ", user_info.date)
+        console.log("user_id: ", user_info._id)
+        console.log("user_info.pre: ", user_info.pre)
+
+        document.getElementById("winnerday").innerHTML = user_info.pre;
+        <% } %>
 
 
-<script type="text/javascript" src="/js/spink-battle.js"></script>
-<script type="text/javascript">
-  $('#name').val( user_info.nickname );
-  <% if (user == undefined) { %>
-    $('#message').attr('disabled','disabled');
-    $('#submit_button').attr('disabled','disabled');
-  <% } else { %>
-    $('#_id').val( user_info._id );
-    $('#input_is3003').prop( "checked", user_info.is_3003 );
-  <% } %>
-  // 몽고디비에서 최근 채팅목록 20개불러와서...
+    </script>
 
-  <% if(messages) { %>
-    <% for(var i=0; i<messages.length; i++) {%>
-      $('#chatLog').append("<%= messages[i].message%>\n");
-    <% } %>
-  <% } %>
-</script>
-<!--사라지게 해놓기 ㅋㅋ-->
+
+
+    <script type="text/javascript" src="/js/spink-battle.js"></script>
+    <script type="text/javascript">
+        $('#name').val(user_info.nickname);
+        <% if (user == undefined) { %>
+        $('#message').attr('disabled', 'disabled');
+        $('#submit_button').attr('disabled', 'disabled');
+        <% } else { %>
+        $('#_id').val(user_info._id);
+        $('#input_is3003').prop("checked", user_info.is_3003);
+        <% } %>
+        // 몽고디비에서 최근 채팅목록 20개불러와서...
+
+        <% if(messages) { %>
+        <% for(var i=0; i<messages.length; i++) {%>
+        $('#chatLog').append("<%= messages[i].message%>\n");
+        <% } %>
+        <% } %>
+    </script>
+    <!--사라지게 해놓기 ㅋㅋ-->

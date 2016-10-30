@@ -11,7 +11,16 @@ router.get('/', function(req,res){
         body_template: 'spink/spink',
         user: req.user,
         messages: null,
+        req_date: req.query.date,
+        previous: moment(req.query.date).subtract(1, "day").format('MM.DD.YY')
       }
+      if( data.req_date == null ){
+        data.req_date = moment().format('YYYY-MM-DD')
+      }
+      // Make previous and next day
+      var previous = moment(data.req_date).subtract(1, "day").format('YYYY-MM-DD')
+      var next = moment(data.req_date).add(1, "day").format('YYYY-MM-DD')
+
 
       /*if (err){
         data.messages = null
@@ -21,7 +30,7 @@ router.get('/', function(req,res){
         data.messages = messages.reverse()
       }
 
-      res.render('spink_main',data);
+      res.render('spink_main', data);
   });
 });
 

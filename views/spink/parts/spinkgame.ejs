@@ -1,40 +1,37 @@
 <div>
-    <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
-    <p></p>
-    <p>
-        <h2><small>스핀크 게임</small></h2> </b>
-    </p>
-
-
-    <div style="margin:auto; text-align:center">
-
-
-        <br>
-        <button id="toggle1" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-warning" onclick="myFunction1()">1</button>
-        <button id="toggle2" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-warning" onclick="myFunction2()">1</button>
-        <button id="toggle3" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-warning" onclick="myFunction3()">1</button>
-
-        <br><br>
-
-        <button id="toggle4" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-info" onclick="myFunction4()">1</button>
-        <button id="toggle5" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-info" onclick="myFunction5()">1</button>
-        <button id="toggle6" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-info" onclick="myFunction6()">1</button>
-        <br><br>
-
-        <%if (user == undefined) { %>
-           <a href="/auth/google"><div style="margin-right:5px;"><button id="spinkNumSubmit" type="button" style="width:120pt;" class="btn btn-default">
+  <div style="position:relative; top:-6; background-color:#cccccc; margin:0; padding:1px;"></div>
+  <p></p>
+  <p>
+    <h2><small>스핀크 게임</small></h2> </b>
+  </p>
+  <div style="margin:auto; text-align:center">
+    <br>
+    <button id="toggle1" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-warning" onclick="myFunction1()">1</button>
+    <button id="toggle2" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-warning" onclick="myFunction2()">1</button>
+    <button id="toggle3" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-warning" onclick="myFunction3()">1</button>
+    <br><br>
+    <button id="toggle4" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-info" onclick="myFunction4()">1</button>
+    <button id="toggle5" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-info" onclick="myFunction5()">1</button>
+    <button id="toggle6" type="button" style="width:40pt, height:40pt;padding-bottom: 10px;padding-top: 10px;padding-left: 18px;padding-right: 18px; font-size:20px;" class="btn btn-info" onclick="myFunction6()">1</button>
+    <br><br>
+    <%if (user == undefined) { %>
+      <a href="/auth/google">
+        <div style="margin-right:5px;">
+          <button id="spinkNumSubmit" type="button" style="width:120pt;" class="btn btn-default">
           Submit
-        </button></div></a>
-        <% }else{ %>
-           <div style="margin-right:5px;"><button id="spinkNumSubmit" type="button" style="width:120pt;" class="btn btn-default" onclick="updateMyAbility()">
-          Submit
-        </button></div>
-        <% } %>
-        <p></p>
-        <div id="myProgress" style="margin:auto; width:120px;">
-            <div id="myBar"></div>
+          </button>
         </div>
-
-
-    </div>
+      </a>
+    <% }else{ %>
+      <div style="margin-right:5px;">
+        <button id="spinkNumSubmit" type="button" style="width:120pt;" class="btn btn-default" onclick="updateMyAbility()">
+          Submit
+        </button>
+      </div>
+    <% } %>
+    <p></p>
+      <div id="myProgress" style="margin:auto; width:120px;">
+        <div id="myBar"></div>
+      </div>
+  </div>
 </div>

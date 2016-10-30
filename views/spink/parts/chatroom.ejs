@@ -5,31 +5,30 @@
 </p>
 
 <div style="text-align:center;">
-      <textarea id="chatLog" class="chat_log" readonly></textarea>
+    <textarea id="chatLog" class="chat_log" readonly></textarea>
 
     <form id="chat">
-      <input id="_id" type="hidden">
-      <input id="name" class="name" type="text" style="width:50px;" readonly>
-      <input id="message" class="message" type="text" style="width:220px;">
-      <input id="submit_button" type="submit" class="chat" style="width:51px;" value="submit"/>
+        <input id="_id" type="hidden">
+        <input id="name" class="name" type="text" style="width:50px;" readonly>
+        <input id="message" class="message" type="text" style="width:220px;">
+        <input id="submit_button" type="submit" class="chat" style="width:51px;" value="submit" />
     </form>
-  <div id="box" class="box">
+    <div id="box" class="box">
 
-    <script>
-
-      var socket = io();
-      $('#chat').on('submit', function(e){
-        socket.emit('send message', $('#_id').val(), $('#name').val(), $('#message').val());
-        $('#message').val("");
-        e.preventDefault();
-      });
-      socket.on('receive message', function(msg){
-        $('#chatLog').append(msg+"\n");
-        $('#chatLog').scrollTop($('#chatLog').innerHeight())
-      });
-      /*socket.on('change name', function(name){
-        $('#name').val( name );
-      });*/
-    </script>
-  </div>
+        <script>
+            var socket = io();
+            $('#chat').on('submit', function(e) {
+                socket.emit('send message', $('#_id').val(), $('#name').val(), $('#message').val());
+                $('#message').val("");
+                e.preventDefault();
+            });
+            socket.on('receive message', function(msg) {
+                $('#chatLog').append(msg + "\n");
+                $('#chatLog').scrollTop($('#chatLog').innerHeight())
+            });
+            /*socket.on('change name', function(name){
+              $('#name').val( name );
+            });*/
+        </script>
+    </div>
 </div>
