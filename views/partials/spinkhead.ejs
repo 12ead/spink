@@ -1,0 +1,218 @@
+<!-- view/partials/head.ejs -->
+
+<meta charset="utf-8">
+<%# <link rel="stylesheet" href="/stylesheets/spinknormalize.css">%>
+<%# <link rel="stylesheet" href="/stylesheets/spinkmaster.css">%>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" type='text/css'>
+<%# <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="/js/form_validation.js"></script>
+
+<!--CHECK THE ERROR src='js/form_~  에러남, src='/js/form_~' 으로 변경해서 에러 해결, 이 에러는 찾는데 상당히 오래 걸림 -->
+<script type="text/javascript" src="/js/highlight.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/stylesheets/w3.css">
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+<%# <script src="http://code.jquery.com/jquery-1.11.1.js"></script> 이거 있으면 닉네임 변경이 안됨 왜?%>
+
+
+<style>
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #d9534f;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 25px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: gray;
+}
+
+#myBar {
+  position: absolute;
+  width: 1%;
+  height: 100%;
+  background-color: white;
+}
+
+
+
+.in-line{
+      width:350px;
+      height:40px;
+    }
+
+
+.wrapper{
+border: 0px solid #FFBB00;
+max-width: 530px;
+height :60px;
+padding: 0px;
+top: 0px;
+left: 50%;
+margin-left:0;
+}
+
+.contents{
+border:0px solid #487BE1;
+width:130px;
+float: left;
+padding: 0;
+}
+
+.sidebar{
+border: 0px solid #487BE1;
+width:140px;
+float: right;
+padding-top: 13px;
+margin-left: 0px;
+padding-left: 15px;
+}
+
+.singleWrap{
+border: 0px solid #FFBB00;
+max-width: 530px;
+height :40px;
+padding: 0px;
+
+top: 0px;
+left: 50%;
+margin-left:0;
+}
+
+
+.singleSide{
+border: 0px solid #487BE1;
+width:125px;
+float: right;
+padding-top: 0px;
+margin-left: 0px;
+padding-left: 40px;
+}
+
+
+.wrapper1{
+border: 0px solid #FFBB00;
+max-width: 530px;
+height :00px;
+padding: 0px;
+top: 0px;
+left: 50%;
+margin-left:0;
+}
+
+.contents1{
+border: 0px solid #487BE1;
+width:130px;
+float: left;
+padding: 0;
+}
+
+.sidebar1{
+border: 0px solid #487BE1;
+width: 50px;
+float: right;
+padding-top: 4px;
+margin-left: 0px;
+padding-left: 0px;
+}
+
+
+.chat_log{ width: 95%; height: 200px; }
+.name{ width: 10%; }
+.message{ width: 70%; }
+.chat{ width: 10%; }
+
+/* CSS에서
+#은 id
+.은 class
+아무것도 없으면 태그 명*/
+
+
+
+#searchNickname {
+  background-image: url('/image/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+
+</style>
+<!-- [if lte IE 8]
+  <script>
+    document.createElement('footer');
+    document.createElement('header');
+  </script>
+ <![end if]-->
+<title>SPINK</title>

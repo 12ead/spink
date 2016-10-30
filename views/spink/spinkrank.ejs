@@ -1,0 +1,67 @@
+<div class="w3-container">
+  <nav aria-label="...">
+    <ul class="pager">
+      <li><a href="?date=<%= previous %>">Previous</a></li>
+      <li style="margin-left: 20px; margin-right: 20px;">
+          <%= req_date %>
+      </li>
+      <li><a href="?date=<%= next %>">Next</a></li>
+    </ul>
+  </nav>
+
+
+
+
+
+
+  <div>
+    <div style="float:right">
+    <input type="text" id="searchNickname" placeholder="Search for Nicknames.." title="Type in a name">
+    </div>
+    <table class="w3-table-all notranslate" style="text-align:center; font-size:12pt; width-min:340px ">
+        <tr>
+            <th style="width:25%; font-size:12pt; text-align:center; vertical-align: middle;">NO</th>
+            <th style="width:25%; font-size:12pt; text-align:center; vertical-align: middle;">Nickname</th>
+            <th style="width:25%; font-size:12pt; text-align:center; vertical-align: middle;">WINS</th>
+        </tr>
+    </table>
+    <table id="rankTable" class="w3-table-all notranslate" style="text-align:center; font-size:12pt; width-min:340px ">
+    <%
+      var current_rank = 0
+      var last_count = -1
+      rank.forEach(function(i, k) {
+
+        if( last_count == -1 ||
+            last_count > i.count ){
+            last_count = i.count
+            current_rank += 1
+        }
+
+    %>
+        <tr>
+              <td style="text-align:center;"><strong><%= current_rank %></strong></td>
+              <% if (i.user[0].url) { %>
+                <td style="text-align:center;"><a href="<%= i.user[0].url %>"><%= i.user[0].nickname %>&nbsp;<i class="fa fa-home" aria-hidden="true"></i></a></td>
+              <% } else { %>
+                <td style="text-align:center;"><%= i.user[0].nickname %></td>
+              <% } %>
+              <td style="text-align:center;"><%= i.count %></td>
+        </tr>
+    <% }); %>
+    </table>
+
+  </div>
+</div>
+
+<script>
+
+var $rows = $('#rankTable tr');
+$('#searchNickname').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+</script>
