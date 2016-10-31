@@ -17,8 +17,8 @@ module.exports = {
     'googleAuth' : {
         'clientID'      : '1084601978202-701m8vs99jehn09dn51qj057vllp3hm0.apps.googleusercontent.com',
         'clientSecret'  : 'EDOhdW9jqSe5hhmzkqYGbqR7',
-        //'callbackURL'   : 'http://12ead.com/auth/google/callback',
-        'callbackURL'   : 'http://localhost:3000/auth/google/callback'
+        'callbackURL'   : 'http://12ead.com/auth/google/callback',
+        //'callbackURL'   : 'http://localhost:3000/auth/google/callback'
     }
 
 };
