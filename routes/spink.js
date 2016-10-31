@@ -7,28 +7,30 @@ var moment = require('moment')
 
 router.get('/', function(req,res){
   ChatMessage.find({ }, null, { skip: 0, limit: 7, sort: '-writedAt' }, function(err, messages) {
-      var data = {    // res.render 의 경우 주소가 /없이 시작, res.redirect의 경우 주소가 /가 있고 시작.
-        body_template: 'spink/spink',
-        user: req.user,
-        messages: null,
-        req_date: req.query.date,
-        previous: moment(req.query.date).subtract(1, "day").format('MM.DD.YY')
-      }
-      if( data.req_date == null ){
-        data.req_date = moment().format('YYYY-MM-DD')
-      }
-      // Make previous and next day
-      var previous = moment(data.req_date).subtract(1, "day").format('YYYY-MM-DD')
-      var next = moment(data.req_date).add(1, "day").format('YYYY-MM-DD')
+      // var data = {    // res.render 의 경우 주소가 /없이 시작, res.redirect의 경우 주소가 /가 있고 시작.
+      //   body_template: 'spink/spink',
+      //   user: req.user,
+      //   messages: null,
+      //   req_date: req.query.date,
+      //   previous: moment(req.query.date).subtract(1, "day").format('MM.DD.YY'),
+      // }
+      var user = req.user
+      //var messages = null
+      var yesterday = moment(req.query.date).subtract(1, "day").format('YYYY-MM-DD')
+      var winnerday = moment(req.query.date).subtract(1, "day").format('MM.DD.YY')
+
       /*if (err){
         data.messages = null
       }*/
 
       if (messages) {
-        data.messages = messages.reverse()
+        messages = messages.reverse()
       }
 
-      res.render('spink_main', data);
+      query.getRank( yesterday, 10)
+      .then( r => {
+      res.render('spink_main', {body_template: 'spink/spink', rank: r, user: user, messages: messages, yesterday: yesterday, winnerday: winnerday} );
+    })
   });
 });
 
@@ -89,6 +91,10 @@ router.get('/battle', function( req, res ) {
 // Today Rank
 router.get('/battle/rank', function( req, res ) {
   query.getTodayRank().then( r => res.json(r) )
+})
+
+router.get('/battle/yesterdayRank', function( req, res ) {
+  query.getYesterdayRank().then( r => res.json(r) )
 })
 
 // Test Url ( Submit spink number for all users )

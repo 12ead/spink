@@ -366,7 +366,7 @@ $(document).ready(function(){
           console.log('user_info.nickname =', user_info.nickname );
         }
       })
-    e.preventDefault()
+    //e.preventDefault()
   })
   $('#input_is3003').change(function(e){
     var $this = $(this);

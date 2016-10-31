@@ -48,8 +48,9 @@ function refreshStatus() {
     getMyBattleResult()
     getBattleStatusBoard()
     getRankBoard()
-}
 
+}
+getYesterdayRank()
 function getMyBattleResult() {
     // Load Default Informations
     if (user_info._id == null) return
@@ -182,6 +183,17 @@ function getCharacterStatus(cb) {
     })
 }
 
+function getYesterdayRank() {
+    $.get("/spink/battle/yesterdayRank", function(data) {
+      for (var i = 0; i < data.length; ++i) {
+          var c = data[i]
+        }
+        console.log("yesterday data[0] : ", data[0] )
+
+      $('#yesterdayWinner').html(data[0].user[0].nickname)
+    })
+  }
+
 function getRankBoard() {
     $.get("/spink/battle/rank", function(data) {
         //today_ranking
@@ -200,12 +212,13 @@ function getRankBoard() {
 
         for (var i = 0; i < data.length; ++i) {
             var c = data[i]
-
+            //console.log("data[i] : ", data[i])
             if (last_count == -1 ||
                 last_count > c.count) {
                 last_count = c.count
                 current_rank += 1
             }
+
             if (c.user[0].url) {
                 rankboard +=
                     '<tr>' +
@@ -224,10 +237,13 @@ function getRankBoard() {
                     '</tr>'
             }
         }
+        //console.log("data[0].user[0] : ", data[0].user[0] )
+        //console.log("data[0] : ", data[0] )
 
         rankboard += '</table>'
 
         $('#today_ranking').html(rankboard)
+
 
     })
 }

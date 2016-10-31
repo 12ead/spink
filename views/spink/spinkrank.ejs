@@ -46,6 +46,7 @@
                 <td style="text-align:center;"><%= i.user[0].nickname %></td>
               <% } %>
               <td style="text-align:center;"><%= i.count %></td>
+              <script>console.log("i : ", "<%= i.count %>")</script>
         </tr>
     <% }); %>
     </table>
@@ -53,7 +54,23 @@
   </div>
 </div>
 
+
+
+<br>
+<!-- 캬, 오늘의 랭킹 첫번째 찾음!! 대박 ㅋㅋ- 16.10.31-->
+
+<%= previous %>
+
+<%= req_date %>
+
+<%= rank[0].user[0].nickname %>
+
+
+
 <script>
+
+//document.getElementById("yesterdayWinner").innerHTML = "c.user[0].nickname :" + c.user[0].nickname
+
 
 var $rows = $('#rankTable tr');
 $('#searchNickname').keyup(function() {

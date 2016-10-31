@@ -193,6 +193,11 @@ m.getTodayRank = function(){
   return m.getRank( fighting_date, 10 )
 }
 
+m.getYesterdayRank = function(){
+  var yesterday_date = moment(datetime.Now()).subtract(1, "day").format('YYYY-MM-DD')
+  return m.getRank( yesterday_date, 10 )
+}
+
 var datetime = require('../lib/datetime')
 
 m.getBattleStatus = function(){
