@@ -24,6 +24,12 @@ function initRoutes( app, passport ){
   app.use('/users', require('./users')); console.log("app.use('/users'");//   /users 에 도달하면 ./routes/users 개체를 사용하겠다라는 의미
   //app.use('/login', require('./login')); console.log("app.use('/login'");
 
+  //test 16.11.02 nh  라우터 테스트
+  app.use('/spink2', require('./spink2'));   //  url : /spink2, routeFileName : spink2.js
+  app.use('/spink3', require('./spink'));    //  url : /spink3, routeFileName : spink.js
+  //app.use('/spink4', require('./spink3'));   //  url : /spink4, routeFileName : spink3.js 파일이 없음 -> 에러남;;;
+
+  //writedAt 16.10.23 nh
   // 위에서 그 개체내에서의 라우트의 주소의 시작은 각각을 상대적 위치로 하여 / 으로 한다.
   // 즉 /users에 유저가 도달하면(솔직히 어디서 출발하여 여기로 도달한 다는 것인 모르겠닼), routes/home 의 개체를 사용하겠다는 것같은데..
   // 여튼, 여기에 도달하면, 불러들인 ./routes/home 파일은 그 내부에서 자신의 위치를 / 로 본다는 뭐 그런 내용.

@@ -53,8 +53,8 @@ router.get('/rank/view', function(req,res){
 
 })
 
-router.get('/createRanking', function(req,res){
-  var req_date = "2016-10-25"
+router.get('/rank/viewk', function(req,res){
+  var req_date = req.query.date
   if( req_date == null ){
     req_date = moment().format('YYYY-MM-DD')
   }
@@ -66,13 +66,11 @@ router.get('/createRanking', function(req,res){
   query.getRank( req_date , 100 )
   .then( r => {
     //console.log(r)
-    res.render('spink_main',{ body_template: 'spink/createRanking', rank: r, req_date:req_date, previous: previous, next: next })
+    res.render('spink_main',{ body_template: 'spink/spinkrankk', rank: r, req_date:req_date, previous: previous, next: next })
   })
 
 })
 
-
-//test 16.11.02KR nh
 router.get('/rank/sum1', function(req,res){
   var req_date = req.query.date
   if( req_date == null ){
@@ -91,7 +89,7 @@ router.get('/rank/sum1', function(req,res){
 });
 
 
-//test 16.11.02KR nh   localhost:3000/spink/sum       localhost:3000/sum 에서 계속 에러나서 두시간 정도 뻘짓,
+
 router.get('/sum', function(req,res){
   var data = {    // res.render 의 경우 주소가 /없이 시작, res.redirect의 경우 주소가 /가 있고 시작.
       body_template: 'spink/spinksum'
@@ -116,16 +114,6 @@ router.post('/character/submit/:id', function( req, res ){
     res.json(r)
   })
 })
-
-//이 것을 버튼이 클릭했을 때 작동하도록 만든다음, 라우터 포스트는 현재 시간, 전달할 것도 현재 날짜와 시간, 쿼리.함수는 새로만드는랭킹-아직 함수 안만듬 아래 createNewCharacterStatus 참고해서 만들것,
-// router.post('/character/submit/(해당날짜-날짜의 폼은 YYYY-MM-DD 이고 직접 입력할 수 있는 란이 있고, 이 라우터는 제출 버튼을 누르면, 작동.)', function( req, res ){
-//   var user_id = req.params.id //버튼 클릭한 사람 아이디
-//   var create_day = 오늘 날짜
-//   query.createNewCharacterStatus( user_id, input_numbers, predict_numbers ).then( r => {
-//     //console.log("CreateCharacterStatus : ",r)
-//     res.json(r)
-//   })
-// })
 
 // router.get('/topic', function(req, res){
 //   res.send('hi');

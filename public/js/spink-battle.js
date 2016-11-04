@@ -183,6 +183,7 @@ function getCharacterStatus(cb) {
     })
 }
 
+// 16.10.31kr nh 어제 승자 메인에 갱신
 function getYesterdayRank() {
     $.get("/spink/battle/yesterdayRank", function(data) {
       for (var i = 0; i < data.length; ++i) {

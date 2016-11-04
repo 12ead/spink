@@ -1,0 +1,184 @@
+<script>var RankingOfEachDay = require("../models/RankingOfEachDay")
+var m = {}
+</script>
+
+
+<div>
+  <div style="float:right">
+  <input type="text" id="searchNickname" placeholder="Search for Nicknames.." title="Type in a name">
+  </div>
+  <table class="w3-table-all notranslate" style="text-align:center; font-size:12pt; width-min:340px ">
+      <tr>
+          <th style="width:25%; font-size:12pt; text-align:center; vertical-align: middle;">NO</th>
+          <th style="width:25%; font-size:12pt; text-align:center; vertical-align: middle;">Nickname</th>
+          <th style="width:25%; font-size:12pt; text-align:center; vertical-align: middle;">WINS</th>
+      </tr>
+  </table>
+  <table id="rankTable" class="w3-table-all notranslate" style="text-align:center; font-size:12pt; width-min:340px ">
+  <%
+    var current_rank = 0
+    var last_count = -1
+    rank.forEach(function(i, k) {
+
+      if( last_count == -1 ||
+          last_count > i.count ){
+          last_count = i.count
+          current_rank += 1
+      }
+
+  %>
+      <tr>
+            <td style="text-align:center;"><strong><%= current_rank %></strong></td>
+            <% if (i.user[0].url) { %>
+              <td style="text-align:center;"><a href="<%= i.user[0].url %>"><%= i.user[0].nickname %>&nbsp;<i class="fa fa-home" aria-hidden="true"></i></a></td>
+            <% } else { %>
+              <td style="text-align:center;"><%= i.user[0].nickname %></td>
+            <% } %>
+            <td style="text-align:center;"><%= i.count %></td>
+            <script>console.log("i : ", "<%= i.count %>")</script>
+      </tr>
+  <% }); %>
+  </table>
+
+</div>
+<table class="w3-table-all notranslate" style="text-align:center; font-size:12pt; width-min:340px ">
+<%
+
+  //var ranking = current_rank
+  var current_rank = 0
+  var last_count = -1
+  rank.forEach(function(i, k) {
+
+    if( last_count == -1 ||
+        last_count > i.count ){
+        last_count = i.count
+        current_rank += 1
+    }
+    if (i.user[0].url) {
+    var url = i.user[0].nickname
+    } else {
+    var url = null
+    }
+    var username = i.user[0].nickname
+    var win_count = i.count
+    var user_id = i.user[0]._id
+
+%>
+<tr>
+      <td style="text-align:center;"><strong><%= current_rank %></strong></td>
+      <% if (url) { %>
+        <td style="text-align:center;"><a href="<%= url %>"><%= username %>&nbsp;<i class="fa fa-home" aria-hidden="true"></i></a></td>
+      <% } else { %>
+        <td style="text-align:center;"><%= username %></td>
+      <% } %>
+      <td style="text-align:center;"><%= win_count %></td>
+      <td style="text-align:center;"><%= user_id %></td>
+      <script>console.log("i : ", "<%= i.count %>")</script>
+</tr>
+<% }); %>
+</table>
+<table class="w3-table-all notranslate" style="text-align:center; font-size:12pt; width-min:340px ">
+<%
+
+  //var ranking = current_rank
+  var current_rank = 0
+  var last_count = -1
+  rank.forEach(function(i, k) {
+
+    if( last_count == -1 ||
+        last_count > i.count ){
+        last_count = i.count
+        current_rank += 1
+    }
+    if (i.user[0].url) {
+    var url = i.user[0].nickname
+    } else {
+    var url = null
+    }
+    var username = i.user[0].nickname
+    var win_count = i.count
+    var user_id = i.user[0]._id
+
+%>
+<tr>
+      <td style="text-align:center;"><strong><%= current_rank %></strong></td>
+      <% if (url) { %>
+        <td style="text-align:center;"><a href="<%= url %>"><%= username %>&nbsp;<i class="fa fa-home" aria-hidden="true"></i></a></td>
+      <% } else { %>
+        <td style="text-align:center;"><%= username %></td>
+      <% } %>
+      <td style="text-align:center;"><%= win_count %></td>
+      <td style="text-align:center;"><%= user_id %></td>
+      <script>console.log("i : ", "<%= i.count %>")</script>
+</tr>
+<% }); %>
+</table>
+
+
+
+<%
+RankingOfEachDay.findOne({ 'rankingdayis' : selectedDay }, function(err, selectedDay) {
+    if (err)
+        return done(err);
+
+    if (selectedDay) {
+
+        // if a user is found, log them in
+        return done(null, selectedDay);
+    } else {
+        // if the user isnt in our database, create a new user
+        var newRankingOfEachDay          = new RankingOfEachDay();
+
+        // set all of the relevant information
+        newRankingOfEachDay.user_id    = profile.id;
+        //newUser.google.token = token;
+        newRankingOfEachDay.nickname  = username;
+        newRankingOfEachDay.ranking = current_rank; // pull the first email
+        newRankingOfEachDay.rankingdayis = 'selectedDay'; // pull the first email
+
+        // save the user
+        newUser.save()
+        .then( r => {
+          var createRandomSpinkArray = require( '../lib/spink').createRandomSpinkArray
+          var query = require('../query')
+          var input_numbers = createRandomSpinkArray( 3 )
+          var predict_numbers = createRandomSpinkArray( 3 )
+          return query.createNewCharacterStatus( r._id, input_numbers, predict_numbers )
+        })
+        .then( r => {
+          return done(null, newUser);
+        });
+    }
+});
+%>
+
+<%#
+// addRankingOfEachDay = function( ranking, url, username, win_count ){ //16.11.02 nh 이건 함수인듯
+//
+//     var addRanking = {}
+//     addRanking.user_id = username
+//     newChain.input_numbers = input_numbers
+//     newChain.order = last.order + 1
+//     newChain.user_id = user_id
+//
+//     console.log( newChain )
+//
+//     return SpinkChain.create( newChain )
+//     .then( r => {
+//       return newChain
+//     })
+//   })
+//   .then( newChain => {
+//     lastChain = newChain
+//     return lastChain
+//   })
+// }
+var rankingOfEachDaySchema = mongoose.Schema({
+  user_id:              { type: mongoose.Schema.ObjectId },
+  nickname:             { type:String},
+  ranking:              { type: Number },
+  rankingdayis:         { type: Date },
+  createdDay:           { type: String, required:true, unique:true}
+})
+// })
+%>

@@ -47,7 +47,6 @@
               <% } %>
               <td style="text-align:center;"><%= i.count %></td>
               <script>console.log("i : ", "<%= i.count %>")</script>
-              <script>console.log("rank[0] :") </script>
         </tr>
     <% }); %>
     </table>
@@ -58,27 +57,15 @@
 
 
 <br>
-<!-- 캬, 오늘의 랭킹 첫번째 찾음!! 대박 ㅋㅋ- 16.10.31  # 제거하면 작동함 ㅋㅋ   -->
+<!-- 캬, 오늘의 랭킹 첫번째 찾음!! 대박 ㅋㅋ- 16.10.31-->
 
+<%= previous %>
 
-<%#= previous %>
+<%= req_date %>
 
-<%#= req_date %>
-
-<%#= rank[0].user[0].nickname %>
-<%#= rank[0].user[0]._id %>
-<%#= rank[0].user[0]%>
-
-<!--
-<script> var a = "<%#= rank[0].user[0]_id%>" </script>
-
-
-dsfdsf
-
-<script> console.log("rank[0].user[0] :", a) </script>
-
-
- -->
+<%= rank[0].user[0].nickname %>
+<%= rank[0].user[0]._id %>
+<%= rank[0].user[0]%>
 
 
 <script>
